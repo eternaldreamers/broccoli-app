@@ -1,14 +1,22 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import GlobalFooter from "./components/Footer";
+import GlobalHeader from "./components/Header";
 
-const app = createApp(App)
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "font-awesome/css/font-awesome.min.css";
 
-app.use(createPinia())
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(createPinia());
+app.use(router);
+
+app.use(GlobalFooter);
+app.use(GlobalHeader);
+
+app.mount("#app");
